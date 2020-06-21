@@ -275,14 +275,15 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 function mousePressed() {
+  if(mouseY>height-100){
+    action("next");
+  }else{
   if(mouseX>width-100){
     action("right");
   }
   if(mouseX<100){
     action("left");
   }
-  if(mouseY>height-100){
-    action("next");
   }
 }
 function action(which) {
