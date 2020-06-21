@@ -589,7 +589,7 @@ function draw() {
   if(step!="making") {
     items();
   }else{
-    background(54, 33, 32);
+    background(191, 179, 172);
     make();
     fill(255);
     textLeading(28);
