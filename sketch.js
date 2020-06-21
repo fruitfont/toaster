@@ -274,6 +274,17 @@ function setup() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+function mousePressed() {
+  if(mouseX>width-100){
+    action("right");
+  }
+  if(mouseX<100){
+    action("left");
+  }
+  if(mouseY>height-100){
+    action("next");
+  }
+}
 function action(which) {
   if (which === "left") {
     
@@ -588,6 +599,12 @@ function draw() {
   selectedEffect += (selected - selectedEffect) / 8;
   if(step!="making") {
     items();
+    noStroke();
+    textAlign(LEFT, CENTER);
+    text("<",50,height/2);
+    textAlign(RIGHT, CENTER);
+    text(">",width-50,height/2);
+    text("NEXT",width-50,height-50);
   }else{
     background(191, 179, 172);
     make();
